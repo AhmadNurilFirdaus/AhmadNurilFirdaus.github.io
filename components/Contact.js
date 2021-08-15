@@ -7,9 +7,7 @@ import {
   Button,
   TextField,
   InputAdornment,
-  useMediaQuery,
 } from "@material-ui/core";
-import { useTheme } from "@material-ui/core/styles";
 import AccountCircle from "@material-ui/icons/AccountCircle";
 import BusinessCenterIcon from "@material-ui/icons/BusinessCenter";
 import SendIcon from "@material-ui/icons/Send";
@@ -18,64 +16,6 @@ import CallIcon from "@material-ui/icons/Call";
 import LaptopMacIcon from "@material-ui/icons/LaptopMac";
 import EmailIcon from "@material-ui/icons/Email";
 import Alert from "@material-ui/lab/Alert";
-
-const useStyles = makeStyles((themes) => ({
-  mainContainer: {
-    borderRadius: 0,
-    overflowY: "auto",
-    // paddingTop: "5vh",
-    boxShadow: "none",
-    opacity: 0.9,
-    height: "85vh",
-    "&::-webkit-scrollbar": {
-      width: "0.4em",
-    },
-    "&::-webkit-scrollbar-track": {
-      boxShadow: "none",
-      webkitBoxShadow: "none",
-    },
-    "&::-webkit-scrollbar-thumb": {
-      backgroundColor: "#bbb",
-      outline: "none",
-      borderRadius: 30,
-    },
-    [themes.breakpoints.down("md")]: {
-      minHeight: "100vh",
-    },
-    [themes.breakpoints.down("xs")]: {
-      minHeight: "100vh",
-    },
-    display: "flex",
-    alignItems: "center",
-  },
-  mobile: {
-    [themes.breakpoints.up("lg")]: {
-      display: "none",
-    },
-  },
-  desktop: {
-    width: 500,
-    [themes.breakpoints.down("md")]: {
-      display: "none",
-    },
-  },
-  disappeared: {
-    [themes.breakpoints.down("md")]: {
-      display: "none",
-    },
-  },
-  title: {
-    [themes.breakpoints.down("xs")]: {
-      fontSize: 18,
-    },
-  },
-  gridContainer: {
-    padding: "0 10px",
-  },
-  textfield: {
-    marginTop: 20,
-  },
-}));
 
 export default function Resume() {
   const classes = useStyles();
@@ -92,9 +32,6 @@ export default function Resume() {
     phoneNumber: "",
     descriptionProject: "",
   });
-
-  const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.down("xs"));
 
   const handleChange = (e) => {
     setValues({ ...values, [e.target.name]: e.target.value });
@@ -155,10 +92,9 @@ export default function Resume() {
         justify="center"
         className={classes.gridContainer}
       >
-        <Grid item lg={4} className={classes.disappeared}>
+        {/*<Grid item lg={4} className={classes.disappeared}>
           <MessageSkeleton body={alert.body} color={alert.color} />
-        </Grid>
-        <Grid item lg={1} className={classes.disappeared}></Grid>
+        </Grid>*/}
         <Grid item lg={3} md={8} sm={8} xs={11} align="center">
           <Typography variant="h6" className={classes.title}>
             Hire me{" "}
@@ -293,17 +229,60 @@ export default function Resume() {
           </Button>
         </Grid>
       </Grid>
-      {matches && (
-        <>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-        </>
-      )}
     </Card>
   );
 }
+
+const useStyles = makeStyles((themes) => ({
+  mainContainer: {
+    borderRadius: 0,
+    overflowY: "auto",
+    boxShadow: "none",
+    opacity: 0.9,
+    height: "100vh",
+    "&::-webkit-scrollbar": {
+      width: "0.4em",
+    },
+    "&::-webkit-scrollbar-track": {
+      boxShadow: "none",
+      webkitBoxShadow: "none",
+    },
+    "&::-webkit-scrollbar-thumb": {
+      backgroundColor: "#bbb",
+      outline: "none",
+      borderRadius: 30,
+    },
+    display: "flex",
+    paddingTop: "7vh",
+    [themes.breakpoints.up("xl")]: {
+      paddingTop: "17vh",
+    },
+  },
+  mobile: {
+    [themes.breakpoints.up("lg")]: {
+      display: "none",
+    },
+  },
+  desktop: {
+    width: 500,
+    [themes.breakpoints.down("md")]: {
+      display: "none",
+    },
+  },
+  disappeared: {
+    [themes.breakpoints.down("md")]: {
+      display: "none",
+    },
+  },
+  title: {
+    [themes.breakpoints.down("xs")]: {
+      fontSize: 18,
+    },
+  },
+  gridContainer: {
+    padding: "0 10px",
+  },
+  textfield: {
+    marginTop: 20,
+  },
+}));

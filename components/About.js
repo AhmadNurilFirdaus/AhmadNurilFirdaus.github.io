@@ -47,6 +47,116 @@ const about = [
   },
 ];
 
+export default function Resume() {
+  const classes = useStyles();
+  const theme = useTheme();
+  const matches = useMediaQuery(theme.breakpoints.up("lg"));
+
+  const checked = useWindowPosition("header", 0.3);
+
+  return (
+    <Card component="header" id="header" className={classes.mainContainer}>
+      <Box className={classes.boxContainer}>
+        <Grid container spacing={3} justify="center">
+          <Grid item lg={2} sm={12} align="center">
+            <Grow in={true} timeout={{ enter: 1000 }}>
+              <Avatar
+                className={classes.avatar}
+                src="/image/profile.jpg"
+                alt="Ahmad Nuril Firdaus"
+              />
+            </Grow>
+            <Grow in={true} timeout={{ enter: 1000 }}>
+              <Button
+                aria-label="Center Align"
+                className={classes.buttonCv}
+                variant="contained"
+                download
+                href="/cv.pdf"
+                color="secondary"
+              >
+                Download CV
+              </Button>
+            </Grow>
+          </Grid>
+          <Grid item lg={6} md={12}>
+            {about.map((data, index) => (
+              <div key={index}>
+                <Grow in={true} timeout={{ enter: 1000 }}>
+                  <Typography variant="body1" className={classes.textBody}>
+                    {data.body}
+                  </Typography>
+                </Grow>
+                <br />
+              </div>
+            ))}
+          </Grid>
+        </Grid>
+      </Box>
+      <br />
+      <Grow in={checked} timeout={{ enter: 1300, exit: 1000 }}>
+        <Typography variant="h4" align="center" className={classes.heading}>
+          Working Experience
+        </Typography>
+      </Grow>
+      <Box component="div" className={classes.timeLine}>
+        {experience.map((data, index) => (
+          <React.Fragment key={index}>
+            <Typography
+              variant="h2"
+              className={`${classes.timeLineYear} ${classes.timeLineItem}`}
+              key={index}
+            >
+              {data.year}
+            </Typography>
+            <Slide
+              in={useWindowPosition("header", (index + 3) / 4.2)}
+              timeout={{ enter: 1300, exit: 1000 }}
+              direction="up"
+            >
+              <Box component="div" className={classes.timeLineItem}>
+                <Typography
+                  variant="h5"
+                  align="justify"
+                  className={classes.subHeading}
+                >
+                  {data.title}
+                </Typography>
+                <Typography
+                  align="justify"
+                  variant="body2"
+                  className={classes.body2}
+                >
+                  {data.body}{" "}
+                  <Link
+                    style={{ color: "orange" }}
+                    href={data.link}
+                    target="_blank"
+                  >
+                    {data.linkTitle}
+                  </Link>
+                </Typography>
+              </Box>
+            </Slide>
+          </React.Fragment>
+        ))}
+      </Box>
+      {!matches && (
+        <>
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+          <br />
+        </>
+      )}
+    </Card>
+  );
+}
+
 const useStyles = makeStyles((themes) => ({
   timeLine: {
     position: "relative",
@@ -161,8 +271,8 @@ const useStyles = makeStyles((themes) => ({
     borderRadius: 0,
     paddingBottom: 20,
     // overflowY: "auto",
-    animation: `$mode 500ms`,
-    maxHeight: "85vh",
+    // animation: `$mode 2000ms`,
+    height: "100vh",
     boxShadow: "none",
     opacity: 0.9,
     "&::-webkit-scrollbar": {
@@ -199,118 +309,15 @@ const useStyles = makeStyles((themes) => ({
   },
   "@keyframes mode": {
     "0%": {
-      opacity: 0.5,
+      opacity: 0,
     },
     "100%": {
-      opacity: 0.9,
+      opacity: 0.7,
+    },
+  },
+  textBody: {
+    [themes.breakpoints.up("xl")]: {
+      fontSize: 20,
     },
   },
 }));
-
-export default function Resume() {
-  const classes = useStyles();
-  const theme = useTheme();
-  const matches = useMediaQuery(theme.breakpoints.up("lg"));
-
-  const checked = useWindowPosition("header", 0.3);
-
-  return (
-    <Card component="header" id="header" className={classes.mainContainer}>
-      <Box className={classes.boxContainer}>
-        <Grid container spacing={3} justify="center">
-          <Grid item lg={2} sm={12} align="center">
-            <Grow in={true} timeout={{ enter: 1000 }}>
-              <Avatar
-                className={classes.avatar}
-                src="/image/profile.jpg"
-                alt="Ahmad Nuril Firdaus"
-              />
-            </Grow>
-            <Grow in={true} timeout={{ enter: 1000 }}>
-              <Button
-                aria-label="Center Align"
-                className={classes.buttonCv}
-                variant="contained"
-                download
-                href="/cv.pdf"
-                color="secondary"
-              >
-                Download CV
-              </Button>
-            </Grow>
-          </Grid>
-          <Grid item lg={6} md={12}>
-            {about.map((data, index) => (
-              <div key={index}>
-                <Grow in={true} timeout={{ enter: 1000 }}>
-                  <Typography variant="body1">{data.body}</Typography>
-                </Grow>
-                <br />
-              </div>
-            ))}
-          </Grid>
-        </Grid>
-      </Box>
-      <br />
-      <Grow in={checked} timeout={{ enter: 1300, exit: 1000 }}>
-        <Typography variant="h4" align="center" className={classes.heading}>
-          Working Experience
-        </Typography>
-      </Grow>
-      <Box component="div" className={classes.timeLine}>
-        {experience.map((data, index) => (
-          <React.Fragment key={index}>
-            <Typography
-              variant="h2"
-              className={`${classes.timeLineYear} ${classes.timeLineItem}`}
-              key={index}
-            >
-              {data.year}
-            </Typography>
-            <Slide
-              in={useWindowPosition("header", (index + 3) / 4.2)}
-              timeout={{ enter: 1300, exit: 1000 }}
-              direction="up"
-            >
-              <Box component="div" className={classes.timeLineItem}>
-                <Typography
-                  variant="h5"
-                  align="justify"
-                  className={classes.subHeading}
-                >
-                  {data.title}
-                </Typography>
-                <Typography
-                  align="justify"
-                  variant="body2"
-                  className={classes.body2}
-                >
-                  {data.body}{" "}
-                  <Link
-                    style={{ color: "orange" }}
-                    href={data.link}
-                    target="_blank"
-                  >
-                    {data.linkTitle}
-                  </Link>
-                </Typography>
-              </Box>
-            </Slide>
-          </React.Fragment>
-        ))}
-      </Box>
-      {!matches && (
-        <>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-        </>
-      )}
-    </Card>
-  );
-}

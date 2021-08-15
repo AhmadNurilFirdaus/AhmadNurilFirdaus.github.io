@@ -4,6 +4,42 @@ import Skeleton from "@material-ui/lab/Skeleton";
 import TelegramIcon from "@material-ui/icons/Telegram";
 import { Card } from "@material-ui/core";
 
+export default function MessageSkeleton({ body, color }) {
+  const classes = useStyles();
+  return (
+    <div className={classes.root}>
+      <Skeleton className={classes.skeleton} style={{ width: 80 }} />
+      <Skeleton className={classes.skeleton} style={{ width: 245 }} />
+      <Skeleton className={classes.skeleton} style={{ width: 400 }} />
+      <Skeleton
+        className={classes.skeleton}
+        style={{
+          width: 533,
+        }}
+      />
+      <Skeleton className={classes.skeleton} style={{ width: 537 }} />
+      <Skeleton
+        className={classes.skeleton}
+        style={{
+          width: 380,
+          marginTop: -80,
+          position: "relative",
+          left: 137,
+        }}
+      />
+      <Skeleton
+        className={classes.skeleton}
+        style={{
+          width: 218,
+          position: "relative",
+          left: 273,
+          marginTop: -80,
+        }}
+      />
+    </div>
+  );
+}
+
 const useStyles = makeStyles(() => ({
   root: {
     marginTop: 70,
@@ -49,47 +85,3 @@ const useStyles = makeStyles(() => ({
     },
   },
 }));
-
-export default function MessageSkeleton({ body, color }) {
-  const classes = useStyles();
-  return (
-    <div className={classes.root}>
-      {/*<Card
-        className={classes.cardIcon}
-        style={{
-          color: Object.keys(body).length > 0 ? color : "#0088cc",
-        }}
-      >
-        <TelegramIcon className={classes.icon} />
-      </Card>*/}
-      <Skeleton className={classes.skeleton} style={{ width: 80 }} />
-      <Skeleton className={classes.skeleton} style={{ width: 245 }} />
-      <Skeleton className={classes.skeleton} style={{ width: 400 }} />
-      <Skeleton
-        className={classes.skeleton}
-        style={{
-          width: 533,
-        }}
-      />
-      <Skeleton className={classes.skeleton} style={{ width: 537 }} />
-      <Skeleton
-        className={classes.skeleton}
-        style={{
-          width: 380,
-          marginTop: -80,
-          position: "relative",
-          left: 137,
-        }}
-      />
-      <Skeleton
-        className={classes.skeleton}
-        style={{
-          width: 218,
-          position: "relative",
-          left: 273,
-          marginTop: -80,
-        }}
-      />
-    </div>
-  );
-}
