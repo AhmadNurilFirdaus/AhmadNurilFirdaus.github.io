@@ -112,7 +112,7 @@ export default function Footer() {
       id: 2,
       class: classes.iconWa,
       icon: WhatsAppIcon,
-      link: "https://wasap.at/qcib7h",
+      link: "https://wa.me/6282244956781",
     },
     {
       id: 3,
