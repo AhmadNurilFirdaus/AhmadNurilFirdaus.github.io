@@ -124,7 +124,6 @@ const useStyles = makeStyles((theme) => ({
       webkitBoxShadow: "none",
     },
     "&::-webkit-scrollbar-thumb": {
-      backgroundColor: "blue",
       outline: "none",
       borderRadius: 30,
     },
@@ -144,6 +143,9 @@ const useStyles = makeStyles((theme) => ({
     overflowY: "auto",
     animation: `$mode 500ms`,
     textAlign: "center",
+    [theme.breakpoints.up("lg")]: {
+      paddingInline: 200,
+    },
     [theme.breakpoints.up("xl")]: {
       paddingInline: 300,
     },
@@ -158,13 +160,13 @@ const useStyles = makeStyles((theme) => ({
   },
   card: {
     width: "90%",
-    minHeight: 350,
+    minHeight: 300,
     marginTop: 30,
     boxShadow: "0 4px 8px 0 rgba(0,0,0,0.3)",
   },
   image: {
     width: "100%",
-    height: 330,
+    height: 300,
     [theme.breakpoints.down("xs")]: { display: "none" },
   },
   web: {
