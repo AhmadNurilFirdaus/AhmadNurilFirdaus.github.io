@@ -211,7 +211,9 @@ export default function Resume() {
             aria-label="Center Align"
             color="secondary"
             fullWidth
-            onClick={handleSubmit}
+            // onClick={handleSubmit}
+            href="https://wa.me/6282244956781"
+            target="_blank"
             style={{
               marginTop: 30,
               textTransform: "none",

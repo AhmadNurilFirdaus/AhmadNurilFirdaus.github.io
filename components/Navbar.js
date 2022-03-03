@@ -153,7 +153,7 @@ export default function Navbar({ theme, toggleDarkTheme }) {
             >
               Portfolio
             </Button>
-            <Button
+            {/*<Button
               component={Link}
               activeClassName={classes.buttonLinkActive}
               href="/contact"
@@ -161,7 +161,7 @@ export default function Navbar({ theme, toggleDarkTheme }) {
               className={classes.buttonLink}
             >
               Contact
-            </Button>
+            </Button>*/}
           </span>
           <span>
             {theme.palette.type === "light" ? (
