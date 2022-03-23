@@ -90,13 +90,13 @@ function MyBottomNavigation(props) {
         component={Link}
         href="/portfolio"
       />
-      <BottomNavigationAction
+      {/*<BottomNavigationAction
         value="contact"
         classes={classes}
         icon={<TelegramIcon />}
         component={Link}
         href="/contact"
-      />
+      />*/}
     </BottomNavigation>
   );
 }

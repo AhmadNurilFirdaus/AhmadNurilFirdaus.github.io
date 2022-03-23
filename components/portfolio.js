@@ -39,7 +39,7 @@ export default function Resume() {
             <Fade in={true} timeout={{ enter: 3000, exit: 3000 }}>
               <Card className={classes.card}>
                 <Grid container spacing={0}>
-                  <Grid item lg={5} md={5} sm={5}>
+                  <Grid item lg={5} md={5} sm={5} xs={12}>
                     <img
                       src={`/image/${item.mobile}`}
                       className={classes.image}
@@ -104,12 +104,12 @@ const useStyles = makeStyles((theme) => ({
     minHeight: "100vh",
     marginTop: 0,
     marginBottom: 100,
-    [theme.breakpoints.down("sm")]: {
-      marginBottom: 570,
-    },
-    [theme.breakpoints.down("xs")]: {
-      marginBottom: theme.spacing(80),
-    },
+    // [theme.breakpoints.down("sm")]: {
+    //   marginBottom: 570,
+    // },
+    // [theme.breakpoints.down("xs")]: {
+    //   marginBottom: theme.spacing(80),
+    // },
   },
   mainContainer: {
     borderRadius: 0,
@@ -163,11 +163,17 @@ const useStyles = makeStyles((theme) => ({
     minHeight: 300,
     marginTop: 30,
     boxShadow: "0 4px 8px 0 rgba(0,0,0,0.3)",
+    [theme.breakpoints.up("xl")]: {
+      minHeight: 400,
+    },
   },
   image: {
     width: "100%",
     height: 300,
     [theme.breakpoints.down("xs")]: { display: "none" },
+    [theme.breakpoints.up("xl")]: {
+      height: 400,
+    },
   },
   web: {
     width: "100%",

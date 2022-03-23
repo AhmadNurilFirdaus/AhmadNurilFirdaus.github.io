@@ -1,5 +1,5 @@
 import Layout from "../components/Layout";
-import Portfolio from "../components/portfolio1";
+import Portfolio from "../components/portfolio";
 
 export default function portfolio() {
   return (
