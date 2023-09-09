@@ -83,13 +83,13 @@ function MyBottomNavigation(props) {
         component={Link}
         href="/about"
       />
-      <BottomNavigationAction
-        value="portfolio"
-        classes={classes}
-        icon={<AppsIcon />}
-        component={Link}
-        href="/portfolio"
-      />
+      {/* <BottomNavigationAction */}
+      {/*   value="portfolio" */}
+      {/*   classes={classes} */}
+      {/*   icon={<AppsIcon />} */}
+      {/*   component={Link} */}
+      {/*   href="/portfolio" */}
+      {/* /> */}
       {/*<BottomNavigationAction
         value="contact"
         classes={classes}

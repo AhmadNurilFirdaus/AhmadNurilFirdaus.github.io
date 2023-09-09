@@ -144,15 +144,15 @@ export default function Navbar({ theme, toggleDarkTheme }) {
             >
               About
             </Button>
-            <Button
-              className={classes.buttonLink}
-              activeClassName={classes.buttonLinkActive}
-              component={Link}
-              naked
-              href="/portfolio"
-            >
-              Portfolio
-            </Button>
+            {/* <Button */}
+            {/*   className={classes.buttonLink} */}
+            {/*   activeClassName={classes.buttonLinkActive} */}
+            {/*   component={Link} */}
+            {/*   naked */}
+            {/*   href="/portfolio" */}
+            {/* > */}
+            {/*   Portfolio */}
+            {/* </Button> */}
             {/*<Button
               component={Link}
               activeClassName={classes.buttonLinkActive}
