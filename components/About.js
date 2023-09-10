@@ -61,66 +61,66 @@ export default function Resume() {
           </Grid>
         </Grid>
       </Box>
-      <br />
-      <Grow in={checked} timeout={{ enter: 1300, exit: 1000 }}>
-        <Typography variant="h4" align="center" className={classes.heading}>
-          Working Experience
-        </Typography>
-      </Grow>
-      <Box component="div" className={classes.timeLine}>
-        {experience.map((data, index) => (
-          <React.Fragment key={index}>
-            <Typography
-              variant="h2"
-              className={`${classes.timeLineYear} ${classes.timeLineItem}`}
-              key={index}
-            >
-              {data.year}
-            </Typography>
-            <Slide
-              in={useWindowPosition("header", (index + 3) / 4.2)}
-              timeout={{ enter: 1300, exit: 1000 }}
-              direction="up"
-            >
-              <Box component="div" className={classes.timeLineItem}>
-                <Typography
-                  variant="h5"
-                  align="justify"
-                  className={classes.subHeading}
-                >
-                  {data.title}
-                </Typography>
-                <Typography
-                  align="justify"
-                  variant="body2"
-                  className={classes.body2}
-                >
-                  {data.body}{" "}
-                  <Link
-                    style={{ color: "orange" }}
-                    href={data.link}
-                    target="_blank"
-                  >
-                    {data.linkTitle}
-                  </Link>
-                </Typography>
-              </Box>
-            </Slide>
-          </React.Fragment>
-        ))}
-      </Box>
-      {!matches && (
-        <>
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-          <br />
-        </>
-      )}
+
+      {/* <Grow in={checked} timeout={{ enter: 1300, exit: 1000 }}> */}
+      {/*   <Typography variant="h4" align="center" className={classes.heading}> */}
+      {/*     Working Experience */}
+      {/*   </Typography> */}
+      {/* </Grow> */}
+      {/* <Box component="div" className={classes.timeLine}> */}
+      {/*   {experience.map((data, index) => ( */}
+      {/*     <React.Fragment key={index}> */}
+      {/*       <Typography */}
+      {/*         variant="h2" */}
+      {/*         className={`${classes.timeLineYear} ${classes.timeLineItem}`} */}
+      {/*         key={index} */}
+      {/*       > */}
+      {/*         {data.year} */}
+      {/*       </Typography> */}
+      {/*       <Slide */}
+      {/*         in={useWindowPosition("header", (index + 3) / 4.2)} */}
+      {/*         timeout={{ enter: 1300, exit: 1000 }} */}
+      {/*         direction="up" */}
+      {/*       > */}
+      {/*         <Box component="div" className={classes.timeLineItem}> */}
+      {/*           <Typography */}
+      {/*             variant="h5" */}
+      {/*             align="justify" */}
+      {/*             className={classes.subHeading} */}
+      {/*           > */}
+      {/*             {data.title} */}
+      {/*           </Typography> */}
+      {/*           <Typography */}
+      {/*             align="justify" */}
+      {/*             variant="body2" */}
+      {/*             className={classes.body2} */}
+      {/*           > */}
+      {/*             {data.body}{" "} */}
+      {/*             <Link */}
+      {/*               style={{ color: "orange" }} */}
+      {/*               href={data.link} */}
+      {/*               target="_blank" */}
+      {/*             > */}
+      {/*               {data.linkTitle} */}
+      {/*             </Link> */}
+      {/*           </Typography> */}
+      {/*         </Box> */}
+      {/*       </Slide> */}
+      {/*     </React.Fragment> */}
+      {/*   ))} */}
+      {/* </Box> */}
+      {/* {!matches && ( */}
+      {/*   <> */}
+      {/*     <br /> */}
+      {/*     <br /> */}
+      {/*     <br /> */}
+      {/*     <br /> */}
+      {/*     <br /> */}
+      {/*     <br /> */}
+      {/*     <br /> */}
+      {/*     <br /> */}
+      {/*   </> */}
+      {/* )} */}
     </Card>
   );
 }
@@ -259,7 +259,7 @@ const useStyles = makeStyles((themes) => ({
       minHeight: "100vh",
     },
     [themes.breakpoints.down("xs")]: {
-      paddingTop: "35%",
+      // paddingTop: "35%",
       overflowY: "auto",
     },
   },
