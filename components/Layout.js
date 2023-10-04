@@ -7,7 +7,6 @@ import {
   MuiThemeProvider,
   createMuiTheme,
 } from "@material-ui/core/styles";
-import BottomNavigation from "./BottomNavigation";
 import { Box } from "@material-ui/core";
 
 export default function Layout({ children }) {
@@ -23,14 +22,12 @@ export default function Layout({ children }) {
         <Box variant="div" className={classes.dark}>
           <Navbar theme={theme} toggleDarkTheme={toggleDarkTheme} />
           <>{children}</>
-          <BottomNavigation />
           <Footer />
         </Box>
       ) : (
         <Box variant="div" className={classes.light}>
           <Navbar theme={theme} toggleDarkTheme={toggleDarkTheme} />
           <>{children}</>
-          <BottomNavigation />
           <Footer />
         </Box>
       )}

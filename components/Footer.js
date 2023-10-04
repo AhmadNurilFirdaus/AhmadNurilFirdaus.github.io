@@ -6,6 +6,7 @@ import {
   IconButton,
   AppBar,
   Toolbar,
+  Hidden,
 } from "@material-ui/core";
 import Link from "../src/Link";
 import GitHubIcon from "@material-ui/icons/GitHub";
@@ -24,9 +25,6 @@ const useStyles = makeStyles((theme) => ({
     top: "auto",
     bottom: 0,
     fontSize: 15,
-    [theme.breakpoints.down("md")]: {
-      display: "none",
-    },
   },
   linkWrapper: {
     backgroundColor: "none",
@@ -34,6 +32,9 @@ const useStyles = makeStyles((theme) => ({
     color: "#eee",
     height: 40,
     borderRadius: 21,
+    [theme.breakpoints.down("sm")]: {
+      border: "none",
+    },
   },
   iconGh: {
     color: "#eee",
@@ -92,6 +93,12 @@ const useStyles = makeStyles((theme) => ({
     display: "flex",
     justifyContent: "space-between",
     alignItems: "center",
+    [theme.breakpoints.down("sm")]: {
+      width: "100%",
+      display: "grid",
+      gridTemplateColumns: "100%",
+      padding: 10,
+    },
   },
 }));
 
@@ -146,9 +153,11 @@ export default function Footer() {
       }
     >
       <Toolbar className={classes.footer}>
-        <Typography variant="body1">
-          Created by <b> Ahmad Nuril Firdaus</b>
-        </Typography>
+        <Hidden smDown>
+          <Typography variant="body1">
+            Created by <b> Ahmad Nuril Firdaus</b>
+          </Typography>
+        </Hidden>
         <Chip
           className={classes.linkWrapper}
           variant="outlined"

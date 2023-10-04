@@ -126,24 +126,24 @@ export default function Navbar({ theme, toggleDarkTheme }) {
         </Typography>
         <Box>
           <span className={classes.linkWrapper}>
-            <Button
-              className={classes.buttonLink}
-              activeClassName={classes.buttonLinkActive}
-              component={Link}
-              naked
-              href="/"
-            >
-              Home
-            </Button>
-            <Button
-              className={classes.buttonLink}
-              activeClassName={classes.buttonLinkActive}
-              component={Link}
-              naked
-              href="/about"
-            >
-              About
-            </Button>
+            {/* <Button */}
+            {/*   className={classes.buttonLink} */}
+            {/*   activeClassName={classes.buttonLinkActive} */}
+            {/*   component={Link} */}
+            {/*   naked */}
+            {/*   href="/" */}
+            {/* > */}
+            {/*   Home */}
+            {/* </Button> */}
+            {/* <Button */}
+            {/*   className={classes.buttonLink} */}
+            {/*   activeClassName={classes.buttonLinkActive} */}
+            {/*   component={Link} */}
+            {/*   naked */}
+            {/*   href="/about" */}
+            {/* > */}
+            {/*   About */}
+            {/* </Button> */}
             {/* <Button */}
             {/*   className={classes.buttonLink} */}
             {/*   activeClassName={classes.buttonLinkActive} */}

@@ -8,10 +8,8 @@ import {
   Grid,
   Button,
   Grow,
-  Slide,
   useMediaQuery,
 } from "@material-ui/core";
-import Link from "../src/Link";
 import { useTheme } from "@material-ui/core/styles";
 import useWindowPosition from "../src/useWindowPosition";
 
